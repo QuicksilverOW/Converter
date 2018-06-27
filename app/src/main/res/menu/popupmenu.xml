@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <group android:id="@+id/menuGroupDefault" >
+        <item
+            android:id="@+id/menu1"
+            android:title="@string/menu1"/>
+        <item
+            android:id="@+id/menu2"
+            android:title="@string/menu2"/>
+        <item
+            android:id="@+id/menu3"
+            android:title="@string/menu3"/>
+        <item
+            android:id="@+id/menu4"
+            android:title="@string/menu4"/>
+    </group>
+    <group android:id="@+id/menuGroupExtra" >
+        <item
+            android:id="@+id/menu5"
+            android:title="@string/menu5"/>
+        <item
+            android:id="@+id/menu6"
+            android:title="@string/menu6"/>
+        <item
+            android:id="@+id/menu7"
+            android:title="@string/menu7"/>
+        <item
+            android:id="@+id/menu8"
+            android:title="@string/menu8"/>
+        <item
+            android:id="@+id/menu9"
+            android:title="@string/menu9"/>
+    </group>
+    <group android:id="@+id/menuGroupJapan">
+        <item
+            android:id="@+id/menu10"
+            android:title="@string/menu10"/>
+        <item
+            android:id="@+id/menu11"
+            android:title="@string/menu11"/>
+        <item
+            android:id="@+id/menu12"
+            android:title="@string/menu12"/>
+        <item
+            android:id="@+id/menu13"
+            android:title="@string/menu13"/>
+        <item
+            android:id="@+id/menu14"
+            android:title="@string/menu14"/>
+        <item
+            android:id="@+id/menu15"
+            android:title="@string/menu15"/>
+    </group>
+    <group android:id="@+id/menuGroupChina">
+        <item
+            android:id="@+id/menu16"
+            android:title="@string/menu16"/>
+        <item
+            android:id="@+id/menu17"
+            android:title="@string/menu17"/>
+        <item
+            android:id="@+id/menu18"
+            android:title="@string/menu18"/>
+        <item
+            android:id="@+id/menu19"
+            android:title="@string/menu19"/>
+        <item
+            android:id="@+id/menu20"
+            android:title="@string/menu20"/>
+        <item
+            android:id="@+id/menu21"
+            android:title="@string/menu21"/>
+    </group>
+    <group android:id="@+id/menuGroupCulinary" >
+        <item
+            android:id="@+id/menu22"
+            android:title="@string/menu22"/>
+        <item
+            android:id="@+id/menu23"
+            android:title="@string/menu23"/>
+        <item
+            android:id="@+id/menu24"
+            android:title="@string/menu24"/>
+    </group>
+    <group android:id="@+id/menuGroupOld">
+        <item
+            android:id="@+id/menu25"
+            android:title="@string/menu25"/>
+        <item
+            android:id="@+id/menu26"
+            android:title="@string/menu26"/>
+        <item
+            android:id="@+id/menu27"
+            android:title="@string/menu27"/>
+        <item
+            android:id="@+id/menu28"
+            android:title="@string/menu28"/>
+        <item
+            android:id="@+id/menu29"
+            android:title="@string/menu29"/>
+        <item
+            android:id="@+id/menu30"
+            android:title="@string/menu30"/>
+        <item
+            android:id="@+id/menu31"
+            android:title="@string/menu31"/>
+    </group>
+
+</menu>

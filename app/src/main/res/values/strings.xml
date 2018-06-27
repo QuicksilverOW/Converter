@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <string name="settings_label">Settings</string>
+    <string name="extra_values">Extra values</string>
+    <string name="japan_values">Japan values</string>
+    <string name="china_values">China values</string>
+    <string name="culinary_values">Culinary values</string>
+    <string name="premetric_values">Premetric values</string>
+    <string name="apply">Apply</string>
+    <string name="no_select">- No item selected -</string>
+    <string name="compare"> Compare: </string>
+    <string name="with">With:</string>
+    <string name="longResult">Result is too long. Overflow</string>
+    <string name="clear">Clear</string>
+    <string name="longInput">The entered number is too long. Overflow</string>
+
+
+    <string name="menu1">Cubic meter</string>
+    <string name="menu2">Cubic decimeter</string>
+    <string name="menu3">Cubic centimeter</string>
+    <string name="menu4">Cubic millimeter</string>
+    <string name="menu5">Barrel</string>
+    <string name="menu6">Cubic yard</string>
+    <string name="menu7">Cubic foot</string>
+    <string name="menu8">Gallon</string>
+    <string name="menu9">Cubic Inch</string>
+    <string name="menu10">Koku</string>
+    <string name="menu11">To</string> !
+    <string name="menu12">Sho</string>!
+    <string name="menu13">Go</string>!
+    <string name="menu14">Shaku</string>!
+    <string name="menu15">Sai</string>!
+    <string name="menu16">Dan</string>!
+    <string name="menu17">Dou</string>!
+    <string name="menu18">Sheng</string>!
+    <string name="menu19">Ge</string>!
+    <string name="menu20">Shao</string>!
+    <string name="menu21">Cuo</string>!
+    <string name="menu22">Glass</string>
+    <string name="menu23">Table spoon</string>
+    <string name="menu24">Tea spoon</string>
+    <string name="menu25">Cartload</string>
+    <string name="menu26">Basket</string>
+    <string name="menu27">Bucket</string>
+    <string name="menu28">Coconut shell</string>
+    <string name="menu29">Hand</string>
+    <string name="menu30">Fist</string>
+    <string name="menu31">Pinch</string>
+
+
+    <string name="button_point" translatable="false">.</string>
+    <string name="button_0" translatable="false">0</string>
+    <string name="button_9" translatable="false">9</string>
+    <string name="button_8" translatable="false">8</string>
+    <string name="button_7" translatable="false">7</string>
+    <string name="button_6" translatable="false">6</string>
+    <string name="button_5" translatable="false">5</string>
+    <string name="button_4" translatable="false">4</string>
+    <string name="button_3" translatable="false">3</string>
+    <string name="button_2" translatable="false">2</string>
+    <string name="button_1" translatable="false">1</string>
+    <string name="button_clear" translatable="false">C</string>
+    <string name="button_clear_all" translatable="false">AC</string>
+    <string name="empty" translatable="false">0</string>
+
+
+
+</resources>

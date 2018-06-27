@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Конвертер</string>
+    <string name="settings_label">Настройки</string>
+    <string name="extra_values">Дополнительные величины</string>
+    <string name="japan_values">Японские величины</string>
+    <string name="china_values">Китайские величины</string>
+    <string name="culinary_values">Кулинарные величины</string>
+    <string name="premetric_values">Дометрические величины</string>
+    <string name="apply">Принять</string>
+    <string name="no_select">- Не выбрано -</string>
+    <string name="compare"> Сравнить: </string>
+    <string name="with">С:</string>
+    <string name="longResult">Результат слишком длинный. Переполнение</string>
+    <string name="clear">Очистить</string>
+    <string name="longInput">Введённое число слишком длинное. Переполнение</string>
+
+
+    <string name="menu1">Кубический метр</string>
+    <string name="menu2">Кубический дециметр</string>
+    <string name="menu3">Кубический сантиметр</string>
+    <string name="menu4">Кубический миллиметр</string>
+    <string name="menu5">Баррель</string>
+    <string name="menu6">Кубический ярд</string>
+    <string name="menu7">Кубический фут</string>
+    <string name="menu8">Галлон</string>
+    <string name="menu9">Кубический дюйм</string>
+    <string name="menu10">Коку</string>
+    <string name="menu11">То</string>
+    <string name="menu12">Шо</string>
+    <string name="menu13">Го</string>
+    <string name="menu14">Шаку</string>
+    <string name="menu15">Сай</string>
+    <string name="menu16">Дань</string>
+    <string name="menu17">Доу</string>
+    <string name="menu18">Шен</string>
+    <string name="menu19">Гэ</string>
+    <string name="menu20">Шао</string>
+    <string name="menu21">Цуо</string>
+    <string name="menu22">Стакан</string>
+    <string name="menu23">Столовая ложка</string>
+    <string name="menu24">Чайная ложка</string>
+    <string name="menu25">Воз</string>
+    <string name="menu26">Корзина</string>
+    <string name="menu27">Ведро</string>
+    <string name="menu28">Скорлупа кокоса</string>
+    <string name="menu29">Ладонь</string>
+    <string name="menu30">Кулак</string>
+    <string name="menu31">Щепоть</string>
+
+</resources>
