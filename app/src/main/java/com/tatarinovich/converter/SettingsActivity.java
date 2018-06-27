@@ -23,19 +23,30 @@ public class SettingsActivity extends AppCompatActivity implements View.OnTouchL
     Switch switch3;
     Switch switch4;
     Switch switch5;
+    Switch switch6;
     Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Intent intent = getIntent();
+
+        if (intent.getBooleanExtra(MainActivity.THEME, false)) {
+                setTheme(R.style.Dark);
+            } else {
+                setTheme(R.style.Light);
+            }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        Intent intent = getIntent();
+
 
         switch1 = findViewById(R.id.switch1);
         switch2 = findViewById(R.id.switch2);
         switch3 = findViewById(R.id.switch3);
         switch4 = findViewById(R.id.switch4);
         switch5 = findViewById(R.id.switch5);
+        switch6 = findViewById(R.id.switch6);
         button = findViewById(R.id.button);
         button.setOnTouchListener(this);
 
@@ -44,16 +55,18 @@ public class SettingsActivity extends AppCompatActivity implements View.OnTouchL
         switch3.setChecked(intent.getBooleanExtra(MainActivity.CHINA_VALUES, false));
         switch4.setChecked(intent.getBooleanExtra(MainActivity.CULINARY_VALUES, false));
         switch5.setChecked(intent.getBooleanExtra(MainActivity.OLD_VALUES, false));
+        switch6.setChecked(intent.getBooleanExtra(MainActivity.THEME, false));
     }
     public void onClick (View view){
-        Intent result = new Intent();
+        Intent result = new Intent(this, MainActivity.class);
         result.putExtra(MainActivity.EXTRA_VALUES, switch1.isChecked());
         result.putExtra(MainActivity.JAPAN_VALUES, switch2.isChecked());
         result.putExtra(MainActivity.CHINA_VALUES, switch3.isChecked());
         result.putExtra(MainActivity.CULINARY_VALUES, switch4.isChecked());
         result.putExtra(MainActivity.OLD_VALUES, switch5.isChecked());
-        setResult(Activity.RESULT_OK, result);
+        result.putExtra(MainActivity.THEME, switch6.isChecked());
         finish();
+        startActivity(result);
     }
 
     @Override

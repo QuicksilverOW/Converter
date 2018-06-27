@@ -1,6 +1,5 @@
 package com.tatarinovich.converter;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,7 +23,6 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity implements OnLongClickListener, OnTouchListener{
 
     private final static double
-
             COEFFICIENT_METR_3 = 1000.0,
             COEFFICIENT_DECIMETR_3 = 1.0,
             COEFFICIENT_SANTIMETR_3 = 0.001,
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
             COEFFICIENT_KULAK = 0.032,
             COEFFICIENT_SHEPOTKA = 0.008;
 
-    private final static int SETTINGS_QUERY = 1;
+    private static boolean THEME_VALUE = false;
 
     final static String
             EXTRA_VALUES = "extra",
@@ -70,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
             CHINA_VALUES = "china",
             CULINARY_VALUES = "culinary",
             OLD_VALUES = "old",
+            THEME = "theme",
             TEXT_VIEW_3_VALUE = "textView3",
             TEXT_VIEW_4_VALUE = "textView4",
             BUTTON_1_TEXT = "button1",
@@ -400,6 +399,21 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
         String stringTV4 = sharedPreferences.getString(TEXT_VIEW_4_VALUE, getString(R.string.empty));
         String stringB1 = sharedPreferences.getString(BUTTON_1_TEXT, getString(R.string.no_select));
         String stringB2 = sharedPreferences.getString(BUTTON_2_TEXT, getString(R.string.no_select)); */
+
+        Intent intent = getIntent();
+            THEME_VALUE = intent.getBooleanExtra(THEME, false);
+            EXTRA = intent.getBooleanExtra(EXTRA_VALUES, false);
+            JAPAN = intent.getBooleanExtra(JAPAN_VALUES, false);
+            CHINA = intent.getBooleanExtra(CHINA_VALUES, false);
+            CULINARY = intent.getBooleanExtra(CULINARY_VALUES, false);
+            OLD = intent.getBooleanExtra(OLD_VALUES, false);
+
+         if (THEME_VALUE) {
+                setTheme(R.style.Dark);
+            } else {
+                setTheme(R.style.Light);
+            }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -445,26 +459,6 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
         decimalFormat.setRoundingMode(RoundingMode.CEILING);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
-            case SETTINGS_QUERY: {
-                switch (resultCode){
-                    case Activity.RESULT_OK: {
-                        EXTRA = data.getBooleanExtra(EXTRA_VALUES, EXTRA);
-                        JAPAN = data.getBooleanExtra(JAPAN_VALUES, JAPAN);
-                        CHINA = data.getBooleanExtra(CHINA_VALUES, CHINA);
-                        CULINARY = data.getBooleanExtra(CULINARY_VALUES, CULINARY);
-                        OLD = data.getBooleanExtra(OLD_VALUES, OLD);
-                    } break;
-                    case Activity.RESULT_CANCELED: {} break;
-                    default: break;
-                }
-            } break;
-            default: break;
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -485,7 +479,9 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
                 intent.putExtra(CHINA_VALUES, CHINA);
                 intent.putExtra(CULINARY_VALUES, CULINARY);
                 intent.putExtra(OLD_VALUES, OLD);
-                startActivityForResult(intent, SETTINGS_QUERY);
+                intent.putExtra(THEME, THEME_VALUE);
+                finish();
+                startActivity(intent);
             } break;
             default: break;
         }

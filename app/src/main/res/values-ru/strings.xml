@@ -13,7 +13,7 @@
     <string name="longResult">Результат слишком длинный. Переполнение</string>
     <string name="clear">Очистить</string>
     <string name="longInput">Введённое число слишком длинное. Переполнение</string>
-
+    <string name="night_mode">Ночной режим</string>
 
     <string name="menu1">Кубический метр</string>
     <string name="menu2">Кубический дециметр</string>
@@ -46,5 +46,7 @@
     <string name="menu29">Ладонь</string>
     <string name="menu30">Кулак</string>
     <string name="menu31">Щепоть</string>
+
+
 
 </resources>

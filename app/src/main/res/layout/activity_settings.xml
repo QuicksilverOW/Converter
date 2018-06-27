@@ -79,11 +79,14 @@
             android:switchMinWidth="10dp"
             android:text="@string/premetric_values" />
 
-        <Spinner
-            android:id="@+id/spinner"
+        <Switch
+            android:id="@+id/switch6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:spinnerMode="dialog" />
+            android:text="@string/night_mode"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:switchMinWidth="10dp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
