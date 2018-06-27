@@ -24,6 +24,7 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity implements OnLongClickListener, OnTouchListener{
 
     private final static double
+
             COEFFICIENT_METR_3 = 1000.0,
             COEFFICIENT_DECIMETR_3 = 1.0,
             COEFFICIENT_SANTIMETR_3 = 0.001,
