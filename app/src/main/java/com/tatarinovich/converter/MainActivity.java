@@ -1,6 +1,7 @@
 package com.tatarinovich.converter;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -69,13 +70,6 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
             CULINARY_VALUES = "culinary",
             OLD_VALUES = "old",
             THEME = "theme",
-            TEXT_VIEW_3_VALUE = "textView3",
-            TEXT_VIEW_4_VALUE = "textView4",
-            BUTTON_1_TEXT = "button1",
-            BUTTON_2_TEXT = "button2",
-            FIRST_COEFF = "firstCoeff",
-            SECOND_COEFF = "secondCoeff",
-            POINT_BUTTON_PRESSED = "pointButtonPressed",
             APP_SETTINGS = "Converter settings";
 
     private static boolean
@@ -105,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
             button2;
     private static DecimalFormat decimalFormat;
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
 
     private void selectButtonPressed (View view, double coeff){
@@ -384,29 +379,37 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
         alertDialog.show();
     }
 
+    void savePreferences(){
+        sharedPreferences = getSharedPreferences(APP_SETTINGS, Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putBoolean(EXTRA_VALUES, EXTRA);
+        editor.putBoolean(JAPAN_VALUES, JAPAN);
+        editor.putBoolean(CHINA_VALUES, CHINA);
+        editor.putBoolean(CULINARY_VALUES, CULINARY);
+        editor.putBoolean(OLD_VALUES, OLD);
+        editor.putBoolean(THEME, THEME_VALUE);
+        editor.apply();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    /*    sharedPreferences = getSharedPreferences(APP_SETTINGS, Context.MODE_PRIVATE);
+
+        sharedPreferences = getSharedPreferences(APP_SETTINGS, Context.MODE_PRIVATE);
         EXTRA = sharedPreferences.getBoolean(EXTRA_VALUES, false);
         JAPAN = sharedPreferences.getBoolean(JAPAN_VALUES, false);
         CHINA = sharedPreferences.getBoolean(CHINA_VALUES, false);
         CULINARY = sharedPreferences.getBoolean(CULINARY_VALUES, false);
         OLD = sharedPreferences.getBoolean(OLD_VALUES, false);
-        pointButtonPressed = sharedPreferences.getBoolean(POINT_BUTTON_PRESSED, false);
-        firstButtonCoeff = Double.parseDouble(sharedPreferences.getString(FIRST_COEFF, "0"));
-        secondButtonCoeff = Double.parseDouble(sharedPreferences.getString(SECOND_COEFF, "0"));
-        String stringTV3 = sharedPreferences.getString(TEXT_VIEW_3_VALUE, getString(R.string.empty));
-        String stringTV4 = sharedPreferences.getString(TEXT_VIEW_4_VALUE, getString(R.string.empty));
-        String stringB1 = sharedPreferences.getString(BUTTON_1_TEXT, getString(R.string.no_select));
-        String stringB2 = sharedPreferences.getString(BUTTON_2_TEXT, getString(R.string.no_select)); */
+        THEME_VALUE = sharedPreferences.getBoolean(THEME, false);
+
 
         Intent intent = getIntent();
-            THEME_VALUE = intent.getBooleanExtra(THEME, false);
-            EXTRA = intent.getBooleanExtra(EXTRA_VALUES, false);
-            JAPAN = intent.getBooleanExtra(JAPAN_VALUES, false);
-            CHINA = intent.getBooleanExtra(CHINA_VALUES, false);
-            CULINARY = intent.getBooleanExtra(CULINARY_VALUES, false);
-            OLD = intent.getBooleanExtra(OLD_VALUES, false);
+        if (intent.hasExtra(THEME)) THEME_VALUE = intent.getBooleanExtra(THEME, false);
+        if (intent.hasExtra(EXTRA_VALUES)) EXTRA = intent.getBooleanExtra(EXTRA_VALUES, false);
+        if (intent.hasExtra(JAPAN_VALUES)) JAPAN = intent.getBooleanExtra(JAPAN_VALUES, false);
+        if (intent.hasExtra(CHINA_VALUES)) CHINA = intent.getBooleanExtra(CHINA_VALUES, false);
+        if (intent.hasExtra(CULINARY_VALUES)) CULINARY = intent.getBooleanExtra(CULINARY_VALUES, false);
+        if (intent.hasExtra(OLD_VALUES)) OLD = intent.getBooleanExtra(OLD_VALUES, false);
 
          if (THEME_VALUE) {
                 setTheme(R.style.Dark);
@@ -449,11 +452,6 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
         button_9.setOnTouchListener(this);
         button1.setOnTouchListener(this);
         button2.setOnTouchListener(this);
-
-     /*   textView3.setText(stringTV3);
-        textView4.setText(stringTV4);
-        button1.setText(stringB1);
-        button2.setText(stringB2);  */
 
         decimalFormat = new DecimalFormat("#.###########");
         decimalFormat.setRoundingMode(RoundingMode.CEILING);
@@ -513,22 +511,9 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
         return false;
     }
 
-  /*  @Override
-    protected void onDestroy() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(EXTRA_VALUES, EXTRA);
-        editor.putBoolean(JAPAN_VALUES, JAPAN);
-        editor.putBoolean(CHINA_VALUES, CHINA);
-        editor.putBoolean(CULINARY_VALUES, CULINARY);
-        editor.putBoolean(OLD_VALUES, OLD);
-        editor.putBoolean(POINT_BUTTON_PRESSED, pointButtonPressed);
-        editor.putString(TEXT_VIEW_3_VALUE, textView3.getText().toString());
-        editor.putString(TEXT_VIEW_4_VALUE, textView4.getText().toString());
-        editor.putString(BUTTON_1_TEXT, button1.getText().toString());
-        editor.putString(BUTTON_2_TEXT, button2.getText().toString());
-        editor.putString(FIRST_COEFF, decimalFormat.format(firstButtonCoeff));
-        editor.putString(SECOND_COEFF, decimalFormat.format(secondButtonCoeff));
-        editor.apply();
-        super.onDestroy();
-    } */
+    @Override
+    protected void onStop() {
+        super.onStop();
+        savePreferences();
+    }
 }
