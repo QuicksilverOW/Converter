@@ -83,7 +83,7 @@
             android:id="@+id/switch6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/night_mode"
+            android:text="@string/shadow_mode"
             android:layout_marginStart="4dp"
             android:layout_marginTop="24dp"
             android:switchMinWidth="10dp" />

@@ -13,7 +13,7 @@
     <string name="longResult">Result is too long. Overflow</string>
     <string name="clear">Clear</string>
     <string name="longInput">The entered number is too long. Overflow</string>
-    <string name="night_mode">Night mode</string>
+    <string name="shadow_mode">Shadow mode</string>
 
     <string name="menu1">Cubic meter</string>
     <string name="menu2">Cubic decimeter</string>

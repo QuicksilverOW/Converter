@@ -67,6 +67,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnTouchL
         result.putExtra(MainActivity.THEME, switch6.isChecked());
         finish();
         startActivity(result);
+        overridePendingTransition(R.anim.main_activity_open, R.anim.settings_activity_close);
     }
 
     @Override
@@ -79,5 +80,14 @@ public class SettingsActivity extends AppCompatActivity implements View.OnTouchL
             default: break;
         }
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent result = new Intent(this, MainActivity.class);
+        finish();
+        startActivity(result);
+        overridePendingTransition(R.anim.main_activity_open, R.anim.settings_activity_close);
     }
 }

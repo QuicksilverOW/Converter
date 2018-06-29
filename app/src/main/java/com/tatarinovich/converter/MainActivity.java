@@ -480,6 +480,7 @@ public class MainActivity extends AppCompatActivity implements OnLongClickListen
                 intent.putExtra(THEME, THEME_VALUE);
                 finish();
                 startActivity(intent);
+                overridePendingTransition(R.anim.settings_activity_open, R.anim.main_activity_close);
             } break;
             default: break;
         }
